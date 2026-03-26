@@ -38,7 +38,7 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 24)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     // MARK: - Metrics Grid
@@ -93,6 +93,6 @@ struct DashboardView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 }

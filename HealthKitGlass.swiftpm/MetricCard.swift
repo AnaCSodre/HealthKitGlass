@@ -35,6 +35,6 @@ struct MetricCard: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 }

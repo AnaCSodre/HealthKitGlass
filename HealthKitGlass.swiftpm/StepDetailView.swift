@@ -44,7 +44,7 @@ struct StepDetailView: View {
         }
         .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     // MARK: - Weekly Chart
@@ -75,7 +75,7 @@ struct StepDetailView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     // MARK: - Daily List
@@ -105,6 +105,6 @@ struct StepDetailView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 }

@@ -45,7 +45,7 @@ struct HeartRateDetailView: View {
         }
         .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     private func bpmStat(label: String, value: Double) -> some View {
@@ -85,7 +85,7 @@ struct HeartRateDetailView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     // MARK: - Stats
@@ -103,7 +103,7 @@ struct HeartRateDetailView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassEffect(.regular.interactive)
+        .glassEffect(.regular)
     }
 
     private func infoRow(icon: String, label: String, value: String) -> some View {
