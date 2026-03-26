@@ -8,32 +8,26 @@ struct MetricCard: View {
     let tint: Color
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Image(systemName: icon)
-                    .font(.title3)
-                    .foregroundStyle(tint)
+        VStack(alignment: .leading, spacing: 6) {
+            Image(systemName: icon)
+                .font(.body)
+                .foregroundStyle(tint)
 
-                Spacer()
-            }
+            HStack(alignment: .firstTextBaseline, spacing: 3) {
+                Text(value)
+                    .font(.title2.bold())
+                    .contentTransition(.numericText())
 
-            VStack(alignment: .leading, spacing: 2) {
-                HStack(alignment: .firstTextBaseline, spacing: 4) {
-                    Text(value)
-                        .font(.title.bold())
-                        .contentTransition(.numericText())
-
-                    Text(unit)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-
-                Text(title)
-                    .font(.caption)
+                Text(unit)
+                    .font(.caption2)
                     .foregroundStyle(.secondary)
             }
+
+            Text(title)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
         }
-        .padding()
+        .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassEffect(.regular)
     }

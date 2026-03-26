@@ -45,9 +45,9 @@ struct DashboardView: View {
 
     private var metricsGrid: some View {
         LazyVGrid(columns: [
-            GridItem(.flexible(), spacing: 16),
-            GridItem(.flexible(), spacing: 16)
-        ], spacing: 16) {
+            GridItem(.flexible(), spacing: 10),
+            GridItem(.flexible(), spacing: 10)
+        ], spacing: 10) {
             MetricCard(
                 title: "Passos",
                 value: "\(viewModel.summary.todaySteps.formatted())",

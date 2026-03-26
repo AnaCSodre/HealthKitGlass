@@ -235,17 +235,20 @@ final class HealthKitViewModel {
     func loadSampleData() {
         let calendar = Calendar.current
         summary.todaySteps = 7_432
-        summary.todayCalories = 342.5
+        summary.todayCalories = 320
         summary.currentHeartRate = 72
 
-        summary.weeklySteps = (0..<7).map { dayOffset in
-            let date = calendar.date(byAdding: .day, value: -6 + dayOffset, to: .now)!
-            return StepData(date: date, count: Int.random(in: 3000...12000))
+        let weeklyValues = [4_821, 8_150, 6_340, 10_245, 5_678, 9_012, 7_432]
+        summary.weeklySteps = weeklyValues.enumerated().map { index, count in
+            let date = calendar.date(byAdding: .day, value: -6 + index, to: calendar.startOfDay(for: .now))!
+            return StepData(date: date, count: count)
         }
 
-        summary.recentHeartRates = (0..<20).map { i in
+        let heartRateValues: [Double] = [72, 75, 68, 80, 77, 65, 70, 82, 74, 69,
+                                          71, 78, 66, 73, 85, 76, 67, 79, 72, 70]
+        summary.recentHeartRates = heartRateValues.enumerated().map { i, bpm in
             let date = calendar.date(byAdding: .minute, value: -i * 30, to: .now)!
-            return HeartRateData(date: date, bpm: Double.random(in: 58...95))
+            return HeartRateData(date: date, bpm: bpm)
         }
     }
 }
