@@ -24,3 +24,10 @@ struct ContentView: View {
         }
     }
 }
+
+#Preview {
+    let viewModel = HealthKitViewModel()
+    viewModel.loadSampleData()
+    return ContentView()
+        .environment(viewModel)
+}
